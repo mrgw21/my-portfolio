@@ -2,6 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import { MoonIcon, SunIcon } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme()
@@ -9,9 +10,9 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/30 dark:bg-black/30 backdrop-blur-lg shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" className="text-xl font-bold tracking-tight">
-          RG
-        </a>
+        <Link href="/" className="text-xl font-bold tracking-tight">
+            RG
+        </Link>
         <div className="hidden md:flex gap-8 text-sm font-medium">
           {['About', 'Portfolio', 'Writings', 'Photography'].map(section => (
             <a
