@@ -14,6 +14,8 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import PhotoModal from '@/components/PhotoModal'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const photoData = [
   { src: '/photos/IMG_3998.jpg', description: 'England, United Kingdom' },
@@ -64,25 +66,7 @@ export default function Home() {
       </ClientOnly>
 
       {/* NAV */}
-      <nav className="sticky top-0 z-50 bg-white/30 dark:bg-black/30 backdrop-blur-lg shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="text-xl font-bold tracking-tight">RG</span>
-          <div className="hidden md:flex gap-8 text-sm font-medium">
-            {['About', 'Portfolio', 'Writings', 'Photography'].map(section => (
-              <a key={section} href={`#${section.toLowerCase()}`} className="hover:text-purple-500 transition-colors">
-                {section}
-              </a>
-            ))}
-          </div>
-          <button onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}>
-            {theme === 'dark' ? (
-              <SunIcon className="h-6 w-6 text-yellow-300" />
-            ) : (
-              <MoonIcon className="h-6 w-6 text-purple-700" />
-            )}
-          </button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <header className="relative h-screen flex items-center justify-center text-center overflow-hidden px-6 md:px-16">
@@ -175,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* PHOTOGRAPHY */}
-      <section id="photography" className="py-16 px-6 md:px-16 max-w-7xl mx-auto">
+      <section id="photography" className="pt-20 pb-16 px-6 md:px-16 max-w-7xl mx-auto">
         <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
           <h2 className="text-3xl font-bold mb-2">Photography</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
@@ -224,23 +208,7 @@ export default function Home() {
 
 
       {/* FOOTER */}
-      <footer className="py-10 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-white/20">
-        <p className="mb-4">© 2025 – Rasyid G.</p>
-        <div className="flex justify-center gap-6 text-base">
-          <a href="https://www.linkedin.com/in/mrasyidg" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
-            <Linkedin className="w-5 h-5 inline" />
-          </a>
-          <a href="https://github.com/mrasyidgpfl" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-            <Github className="w-5 h-5 inline" />
-          </a>
-          <a href="https://www.instagram.com/mrasyidg" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition-colors">
-            <Instagram className="w-5 h-5 inline" />
-          </a>
-          <a href="https://x.com/mrasyidg" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
-            <Twitter className="w-5 h-5 inline" />
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

@@ -1,0 +1,28 @@
+const photoData = [
+  { src: '/photos/IMG_3998.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4026.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4505.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4536.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4538.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4605.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4721.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4752.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4784.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4817.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4841.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4852.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4888.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4974.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_5259.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_5738.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_5758.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6013.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6021.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6279.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6399.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6484.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6489.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_7327.jpg', description: 'England, United Kingdom' },
+]
+
+export default photoData
