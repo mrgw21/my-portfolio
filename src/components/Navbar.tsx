@@ -30,6 +30,13 @@ export default function Navbar() {
               {name}
             </Link>
           ))}
+          <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+            {theme === 'dark' ? (
+              <SunIcon className="h-5 w-5 text-yellow-300" />
+            ) : (
+              <MoonIcon className="h-5 w-5 text-purple-700" />
+            )}
+          </button>
         </div>
 
         {/* Mobile Toggle */}
