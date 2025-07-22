@@ -167,7 +167,7 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-purple-600" viewBox="0 0 24 24">
                 <path d="M12 16.5l4.5-4.5h-3v-6h-3v6h-3l4.5 4.5zM5 18v2h14v-2H5z" />
               </svg>
-              SlateQ for Slate-Based E-Commerce Recommender Systems
+              (In Progress) SlateQ for Slate-Based E-Commerce Recommender Systems
             </a>
           </li>
           </ul>
