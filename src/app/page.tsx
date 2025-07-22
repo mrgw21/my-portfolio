@@ -18,31 +18,31 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const photoData = [
-  { src: '/photos/IMG_3998.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4026.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4505.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4536.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4538.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4605.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4721.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4752.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4784.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4817.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4841.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4852.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4888.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_4974.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_5259.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_5738.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_5758.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_6013.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_6021.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_6279.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_6399.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_6484.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_6489.jpg', description: 'England, United Kingdom' },
-  { src: '/photos/IMG_7327.jpg', description: 'England, United Kingdom' },
-];
+  { src: '/photos/IMG_3998.jpg', description: 'Pulteney Bridge, Bath' },
+  { src: '/photos/IMG_4026.jpg', description: 'City of Bath from Victoria Park' },
+  { src: '/photos/IMG_4505.jpg', description: 'Canary Wharf Skyline from Greenwich Park' },
+  { src: '/photos/IMG_4536.jpg', description: 'Canary Wharf... Trash cans...' },
+  { src: '/photos/IMG_4538.jpg', description: 'One of Canary Wharf underground station entrances' },
+  { src: '/photos/IMG_4605.jpg', description: "Regent's Street on a Chrismas Night, 2024" },
+  { src: '/photos/IMG_4721.jpg', description: 'Edinburgh, Scotland' },
+  { src: '/photos/IMG_4752.jpg', description: 'A random street in Edinburgh' },
+  { src: '/photos/IMG_4784.jpg', description: 'Edinburgh Skyline' },
+  { src: '/photos/IMG_4817.jpg', description: 'On top of a hill in Edinburgh' },
+  { src: '/photos/IMG_4841.jpg', description: 'Again Edinburgh Skyline' },
+  { src: '/photos/IMG_4852.jpg', description: 'Urban Edinburgh' },
+  { src: '/photos/IMG_4888.jpg', description: 'Bath Trains Station, Christmas 2024' },
+  { src: '/photos/IMG_4974.jpg', description: 'North Parade Junction' },
+  { src: '/photos/IMG_5259.jpg', description: 'Christ Church College, Oxford' },
+  { src: '/photos/IMG_5738.jpg', description: 'Bath Half Marathon' },
+  { src: '/photos/IMG_5758.jpg', description: 'River Avon and countryside hills' },
+  { src: '/photos/IMG_6013.jpg', description: 'Clifton Suspension Bridge, Bristol' },
+  { src: '/photos/IMG_6021.jpg', description: 'Cabot Circus, Bristol' },
+  { src: '/photos/IMG_6279.jpg', description: 'Bath Uni 10 West Building' },
+  { src: '/photos/IMG_6399.jpg', description: 'Unique Fudge Vendor' },
+  { src: '/photos/IMG_6484.jpg', description: 'Somewhere in Bath' },
+  { src: '/photos/IMG_6489.jpg', description: 'Pulteney Bridge, one of the very few Paladian bridges in the world' },
+  { src: '/photos/IMG_7327.jpg', description: "La Iguanas Restaurant (I don't recommend the tacos) in Bath" },
+]
 
 const PHOTOS_PER_PAGE = 6
 
@@ -163,7 +163,7 @@ export default function Home() {
         <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
           <h2 className="text-3xl font-bold mb-2">Photography</h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
-            Not high-res photos of my time, studying in England.
+            Not high-res shards of my time, studying in England.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">

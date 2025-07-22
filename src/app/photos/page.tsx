@@ -33,7 +33,7 @@ export default function PhotosPage() {
         >
           <h1 className="text-3xl font-bold mb-2">Photography</h1>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
-            Not high-res photos of my time, studying in England.
+            Not high-res photo collection.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
