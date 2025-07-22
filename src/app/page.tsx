@@ -5,6 +5,7 @@ import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
 import BackgroundParticles from '@/components/BackgroundParticles'
 import ClientOnly from '@/components/ClientOnly'
+import Favicon from '@/components/Favicon'
 import {
   Linkedin,
   Github,
@@ -12,9 +13,42 @@ import {
   Twitter,
 } from 'lucide-react'
 import Image from 'next/image'
+import PhotoModal from '@/components/PhotoModal'
+
+const photoData = [
+  { src: '/photos/IMG_3998.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4026.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4505.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4536.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4538.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4605.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4721.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4752.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4784.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4817.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4841.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4852.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4888.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_4974.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_5259.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_5738.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_5758.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6013.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6021.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6279.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6399.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6484.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_6489.jpg', description: 'England, United Kingdom' },
+  { src: '/photos/IMG_7327.jpg', description: 'England, United Kingdom' },
+];
+
+const PHOTOS_PER_PAGE = 6
 
 export default function Home() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [selectedPhoto, setSelectedPhoto] = useState<null | { src: string; description: string }>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+
 
   useEffect(() => {
     const root = document.documentElement
@@ -24,6 +58,7 @@ export default function Home() {
 
   return (
     <div className="bg-gradient-to-br from-blue-100/50 via-purple-100/50 to-pink-100/50 dark:from-neutral-900/40 dark:via-zinc-800/40 dark:to-neutral-950/40 text-black dark:text-white transition-all relative">
+      <Favicon />
       <ClientOnly>
         <BackgroundParticles />
       </ClientOnly>
@@ -122,23 +157,71 @@ export default function Home() {
       <section id="writings" className="py-24 px-6 md:px-16 max-w-5xl mx-auto">
         <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
           <h2 className="text-3xl font-bold mb-6">Writings</h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Beyond Clicks: Optimizing Long-Term Value with SlateQ</li>
+          <ul className="pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+          <li className="flex items-center gap-2">
+            <a
+              href="/writings/SlateQLitSurveyRasyidG.pdf"
+              download
+              className="text-purple-600 hover:underline flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-purple-600" viewBox="0 0 24 24">
+                <path d="M12 16.5l4.5-4.5h-3v-6h-3v6h-3l4.5 4.5zM5 18v2h14v-2H5z" />
+              </svg>
+              SlateQ for Slate-Based E-Commerce Recommender Systems
+            </a>
+          </li>
           </ul>
         </motion.div>
       </section>
 
       {/* PHOTOGRAPHY */}
-      <section id="photography" className="py-24 px-6 md:px-16 max-w-7xl mx-auto">
+      <section id="photography" className="py-16 px-6 md:px-16 max-w-7xl mx-auto">
         <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
-          <h2 className="text-3xl font-bold mb-6">Photography</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="h-40 bg-gray-200 dark:bg-zinc-700 rounded-xl" />
+          <h2 className="text-3xl font-bold mb-2">Photography</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+            Not high-res photos of my time, studying in England.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
+            {photoData
+              .slice((currentPage - 1) * PHOTOS_PER_PAGE, currentPage * PHOTOS_PER_PAGE)
+              .map((photo, idx) => (
+                <div key={idx} className="cursor-pointer" onClick={() => setSelectedPhoto(photo)}>
+                  <img
+                    src={photo.src}
+                    alt={`Photo ${idx + 1}`}
+                    className="rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              ))}
+          </div>
+
+          <div className="flex justify-center gap-2 mb-4">
+            {Array.from({ length: Math.ceil(photoData.length / PHOTOS_PER_PAGE) }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`px-3 py-1 rounded-full text-sm ${
+                  currentPage === i + 1
+                    ? 'bg-purple-500 text-white'
+                    : 'bg-gray-200 dark:bg-zinc-700 text-gray-700 dark:text-gray-300'
+                }`}
+              >
+                {i + 1}
+              </button>
             ))}
           </div>
+
+          {selectedPhoto && (
+            <PhotoModal
+              src={selectedPhoto.src}
+              description={selectedPhoto.description}
+              onClose={() => setSelectedPhoto(null)}
+            />
+          )}
         </motion.div>
       </section>
+
 
       {/* FOOTER */}
       <footer className="py-10 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-white/20">
