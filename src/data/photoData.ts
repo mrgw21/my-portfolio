@@ -11,7 +11,7 @@ const photoData = [
   { src: '/photos/IMG_4817.jpg', description: 'On top of a hill in Edinburgh' },
   { src: '/photos/IMG_4841.jpg', description: 'Again Edinburgh Skyline' },
   { src: '/photos/IMG_4852.jpg', description: 'Urban Edinburgh' },
-  { src: '/photos/IMG_4888.jpg', description: 'Bath Trains Station, Christmas 2024' },
+  { src: '/photos/IMG_4888.jpg', description: 'Bath Train Station, Christmas 2024' },
   { src: '/photos/IMG_4974.jpg', description: 'North Parade Junction' },
   { src: '/photos/IMG_5259.jpg', description: 'Christ Church College, Oxford' },
   { src: '/photos/IMG_5738.jpg', description: 'Bath Half Marathon' },
@@ -21,8 +21,8 @@ const photoData = [
   { src: '/photos/IMG_6279.jpg', description: 'Bath Uni 10 West Building' },
   { src: '/photos/IMG_6399.jpg', description: 'Unique Fudge Vendor' },
   { src: '/photos/IMG_6484.jpg', description: 'Somewhere in Bath' },
-  { src: '/photos/IMG_6489.jpg', description: 'Pulteney Bridge, one of the very few Paladian bridges in the world' },
-  { src: '/photos/IMG_7327.jpg', description: "La Iguanas Restaurant (I don't recommend the tacos) in Bath" },
+  { src: '/photos/IMG_6489.jpg', description: 'Pulteney Bridge, one of the very few Palladian bridges in the world with stores on it.' },
+  { src: '/photos/IMG_7327.jpg', description: "Las Iguanas Restaurant (I don't recommend the tacos) in Bath" },
 ]
 
 export default photoData
