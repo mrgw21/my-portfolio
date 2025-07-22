@@ -1,10 +1,10 @@
 const photoData = [
   { src: '/photos/IMG_3998.jpg', description: 'Pulteney Bridge, Bath' },
-  { src: '/photos/IMG_4026.jpg', description: 'City of Bath from Victoria Park' },
+  { src: '/photos/IMG_4026.jpg', description: 'City of Bath from Alexandria Park' },
   { src: '/photos/IMG_4505.jpg', description: 'Canary Wharf Skyline from Greenwich Park' },
   { src: '/photos/IMG_4536.jpg', description: 'Canary Wharf... Trash cans...' },
   { src: '/photos/IMG_4538.jpg', description: 'One of Canary Wharf underground station entrances' },
-  { src: '/photos/IMG_4605.jpg', description: "Regent's Street on a Chrismas Night, 2024" },
+  { src: '/photos/IMG_4605.jpg', description: "Regent Street on a Chrismas Night, 2024" },
   { src: '/photos/IMG_4721.jpg', description: 'Edinburgh, Scotland' },
   { src: '/photos/IMG_4752.jpg', description: 'A random street in Edinburgh' },
   { src: '/photos/IMG_4784.jpg', description: 'Edinburgh Skyline' },
