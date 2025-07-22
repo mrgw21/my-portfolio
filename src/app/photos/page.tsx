@@ -8,7 +8,7 @@ import BackgroundParticles from '@/components/BackgroundParticles'
 import PhotoModal from '@/components/PhotoModal'
 import photoData from '@/data/photoData'
 
-const PHOTOS_PER_PAGE = 9
+const PHOTOS_PER_PAGE = 6
 
 export default function PhotosPage() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -25,7 +25,7 @@ export default function PhotosPage() {
     <>
       <Navbar />
       <BackgroundParticles />
-      <main className="py-20 px-6 md:px-16 max-w-7xl mx-auto relative z-10">
+      <main className="py-16 px-6 md:px-16 max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
