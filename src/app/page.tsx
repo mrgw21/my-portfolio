@@ -1,103 +1,180 @@
-import Image from "next/image";
+'use client'
+
+import { useEffect, useState } from 'react'
+import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
+import { motion } from 'framer-motion'
+import BackgroundParticles from '@/components/BackgroundParticles'
+import ClientOnly from '@/components/ClientOnly'
+import {
+  Linkedin,
+  Github,
+  Instagram,
+  Twitter,
+} from 'lucide-react'
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+  useEffect(() => {
+    const root = document.documentElement
+    root.classList.remove(theme === 'dark' ? 'light' : 'dark')
+    root.classList.add(theme)
+  }, [theme])
+
+  return (
+  <div className="bg-gradient-to-br from-blue-100/50 via-purple-100/50 to-pink-100/50 dark:from-neutral-900/40 dark:via-zinc-800/40 dark:to-neutral-950/40 text-black dark:text-white transition-all relative">
+  <ClientOnly>
+    <BackgroundParticles />
+  </ClientOnly>
+        {/* NAV */}
+      <nav className="sticky top-0 z-50 bg-white/30 dark:bg-black/30 backdrop-blur-lg shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <span className="text-xl font-bold tracking-tight">RG</span>
+          <div className="hidden md:flex gap-8 text-sm font-medium">
+            {['About', 'Portfolio', 'Writings', 'Photography'].map(section => (
+              <a key={section} href={`#${section.toLowerCase()}`} className="hover:text-purple-500 transition-colors">
+                {section}
+              </a>
+            ))}
+          </div>
+          <button onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}>
+            {theme === 'dark' ? (
+              <SunIcon className="h-6 w-6 text-yellow-300" />
+            ) : (
+              <MoonIcon className="h-6 w-6 text-purple-700" />
+            )}
+          </button>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <header className="relative h-screen flex items-center justify-center text-center overflow-hidden px-6 md:px-16">
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10"
+        >
+          <h1 className="text-5xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
+            Hi, I'm Rasyid Gatrawijaya
+          </h1>
+          <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
+            MSc CS @ Bath | Versatile Software Engineer | Ex-Shopee
+          </p>
+        </motion.div>
+
+        <div className="absolute inset-0 bg-white/10 dark:bg-black/10 backdrop-blur-sm z-0" />
+      </header>
+
+      {/* ABOUT */}
+      <section id="about" className="py-24 px-6 md:px-16 max-w-5xl mx-auto">
+        <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
+          <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            I'm a software engineer passionate about modern frontends, infrastructure, and machine learning.
+            Previously worked at Shopee. Currently finishing my MSc in Computer Science at the University of Bath.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* FRONTEND PORTFOLIO */}
+      <section id="portfolio" className="py-24 px-6 md:px-16 max-w-7xl mx-auto">
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold mb-8">Frontend Portfolio</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              ['DeskChat', 'Desktop Browser Chat', '/projects/deskchat.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/hXkUaIivfS9Fg2d'],
+              ['EnviroTrends', 'Environmental Analytics Tool', '/projects/envirotrends.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/jrSAYUJ-Al0BdP7'],
+              ['Maxwell 3D', "Maxwell Equation's Simulations", '/projects/maxwell3d.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/r8cCwT8UVZapWZ3'],
+              ['WaveSim', 'Wave Interference Simulator', '/projects/wavesim.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/wO2Lav0hWYnihxa'],
+              ['VoiceBoard', 'Voice Commanded Task Board', '/projects/voiceboard.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/y_B9crRobORi13S'],
+              ['Chrono', 'Interactive Schedule Manager', '/projects/chrono.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/7Zww6d3wgCKcRFI']
+            ].map(([title, desc, img, url], i) => (
+              <a
+                key={i}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer bg-white/40 dark:bg-white/10 rounded-2xl p-6 shadow-xl backdrop-blur-md border border-white/20 hover:bg-white/60 dark:hover:bg-white/20 transition"
+              >
+                <img
+                  src={img}
+                  alt={title}
+                  className="h-40 w-full object-cover rounded-xl mb-4"
+                />
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{desc}</p>
+              </a>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* WRITINGS */}
+      <section id="writings" className="py-24 px-6 md:px-16 max-w-5xl mx-auto">
+        <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
+          <h2 className="text-3xl font-bold mb-6">Writings</h2>
+          <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Beyond Clicks: Optimizing Long-Term Value with SlateQ</li>
+          </ul>
+        </motion.div>
+      </section>
+
+      {/* PHOTOGRAPHY */}
+      <section id="photography" className="py-24 px-6 md:px-16 max-w-7xl mx-auto">
+        <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
+          <h2 className="text-3xl font-bold mb-6">Photography</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="h-40 bg-gray-200 dark:bg-zinc-700 rounded-xl" />
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-10 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-white/20">
+        <p className="mb-4">© 2025 – Rasyid G.</p>
+        <div className="flex justify-center gap-6 text-base">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.linkedin.com/in/mrasyidg"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-blue-600 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <Linkedin className="w-5 h-5 inline" />
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/mrasyidgpfl"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Read our docs
+            <Github className="w-5 h-5 inline" />
+          </a>
+          <a
+            href="https://www.instagram.com/mrasyidg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-pink-500 transition-colors"
+          >
+            <Instagram className="w-5 h-5 inline" />
+          </a>
+          <a
+            href="https://x.com/mrasyidg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400 transition-colors"
+          >
+            <Twitter className="w-5 h-5 inline" />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
     </div>
-  );
+  )
 }
