@@ -11,6 +11,7 @@ import {
   Instagram,
   Twitter,
 } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Home() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
@@ -22,11 +23,12 @@ export default function Home() {
   }, [theme])
 
   return (
-  <div className="bg-gradient-to-br from-blue-100/50 via-purple-100/50 to-pink-100/50 dark:from-neutral-900/40 dark:via-zinc-800/40 dark:to-neutral-950/40 text-black dark:text-white transition-all relative">
-  <ClientOnly>
-    <BackgroundParticles />
-  </ClientOnly>
-        {/* NAV */}
+    <div className="bg-gradient-to-br from-blue-100/50 via-purple-100/50 to-pink-100/50 dark:from-neutral-900/40 dark:via-zinc-800/40 dark:to-neutral-950/40 text-black dark:text-white transition-all relative">
+      <ClientOnly>
+        <BackgroundParticles />
+      </ClientOnly>
+
+      {/* NAV */}
       <nav className="sticky top-0 z-50 bg-white/30 dark:bg-black/30 backdrop-blur-lg shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <span className="text-xl font-bold tracking-tight">RG</span>
@@ -49,7 +51,6 @@ export default function Home() {
 
       {/* HERO */}
       <header className="relative h-screen flex items-center justify-center text-center overflow-hidden px-6 md:px-16">
-
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,7 +58,7 @@ export default function Home() {
           className="relative z-10"
         >
           <h1 className="text-5xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
-            Hi, I'm Rasyid Gatrawijaya
+            Hi, I&apos;m Rasyid Gatrawijaya
           </h1>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
             MSc CS @ Bath | Versatile Software Engineer | Ex-Shopee
@@ -72,7 +73,7 @@ export default function Home() {
         <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            I'm a software engineer passionate about modern frontends, infrastructure, and machine learning.
+            I&apos;m a software engineer passionate about modern frontends, infrastructure, and machine learning.
             Previously worked at Shopee. Currently finishing my MSc in Computer Science at the University of Bath.
           </p>
         </motion.div>
@@ -90,7 +91,7 @@ export default function Home() {
             {[
               ['DeskChat', 'Desktop Browser Chat', '/projects/deskchat.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/hXkUaIivfS9Fg2d'],
               ['EnviroTrends', 'Environmental Analytics Tool', '/projects/envirotrends.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/jrSAYUJ-Al0BdP7'],
-              ['Maxwell 3D', "Maxwell Equation's Simulations", '/projects/maxwell3d.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/r8cCwT8UVZapWZ3'],
+              ['Maxwell 3D', "Maxwell Equation&apos;s Simulations", '/projects/maxwell3d.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/r8cCwT8UVZapWZ3'],
               ['WaveSim', 'Wave Interference Simulator', '/projects/wavesim.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/wO2Lav0hWYnihxa'],
               ['VoiceBoard', 'Voice Commanded Task Board', '/projects/voiceboard.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/y_B9crRobORi13S'],
               ['Chrono', 'Interactive Schedule Manager', '/projects/chrono.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/7Zww6d3wgCKcRFI']
@@ -102,9 +103,11 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="cursor-pointer bg-white/40 dark:bg-white/10 rounded-2xl p-6 shadow-xl backdrop-blur-md border border-white/20 hover:bg-white/60 dark:hover:bg-white/20 transition"
               >
-                <img
+                <Image
                   src={img}
                   alt={title}
+                  width={500}
+                  height={300}
                   className="h-40 w-full object-cover rounded-xl mb-4"
                 />
                 <h3 className="text-lg font-semibold">{title}</h3>
@@ -141,36 +144,16 @@ export default function Home() {
       <footer className="py-10 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-white/20">
         <p className="mb-4">© 2025 – Rasyid G.</p>
         <div className="flex justify-center gap-6 text-base">
-          <a
-            href="https://www.linkedin.com/in/mrasyidg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-600 transition-colors"
-          >
+          <a href="https://www.linkedin.com/in/mrasyidg" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
             <Linkedin className="w-5 h-5 inline" />
           </a>
-          <a
-            href="https://github.com/mrasyidgpfl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-900 dark:hover:text-white transition-colors"
-          >
+          <a href="https://github.com/mrasyidgpfl" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">
             <Github className="w-5 h-5 inline" />
           </a>
-          <a
-            href="https://www.instagram.com/mrasyidg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-pink-500 transition-colors"
-          >
+          <a href="https://www.instagram.com/mrasyidg" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition-colors">
             <Instagram className="w-5 h-5 inline" />
           </a>
-          <a
-            href="https://x.com/mrasyidg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-400 transition-colors"
-          >
+          <a href="https://x.com/mrasyidg" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
             <Twitter className="w-5 h-5 inline" />
           </a>
         </div>
