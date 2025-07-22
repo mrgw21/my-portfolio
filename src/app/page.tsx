@@ -110,7 +110,7 @@ export default function Home() {
             {[
               ['DeskChat', 'Desktop Browser Chat', '/projects/deskchat.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/hXkUaIivfS9Fg2d'],
               ['EnviroTrends', 'Environmental Analytics Tool', '/projects/envirotrends.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/jrSAYUJ-Al0BdP7'],
-              ['Maxwell 3D', "Maxwell Equation&apos;s Simulations", '/projects/maxwell3d.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/r8cCwT8UVZapWZ3'],
+              ['Maxwell 3D', "Maxwell Equation's Simulations", '/projects/maxwell3d.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/r8cCwT8UVZapWZ3'],
               ['WaveSim', 'Wave Interference Simulator', '/projects/wavesim.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/wO2Lav0hWYnihxa'],
               ['VoiceBoard', 'Voice Commanded Task Board', '/projects/voiceboard.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/y_B9crRobORi13S'],
               ['Chrono', 'Interactive Schedule Manager', '/projects/chrono.png', 'https://scale-cds-public-us-west-2.s3.amazonaws.com/65cbc42b32ffab95dd54b864/7Zww6d3wgCKcRFI']
