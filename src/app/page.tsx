@@ -40,8 +40,8 @@ const photoData = [
   { src: '/photos/IMG_6279.jpg', description: 'Bath Uni 10 West Building' },
   { src: '/photos/IMG_6399.jpg', description: 'Unique Fudge Vendor' },
   { src: '/photos/IMG_6484.jpg', description: 'Somewhere in Bath' },
-  { src: '/photos/IMG_6489.jpg', description: 'Pulteney Bridge, one of the very few Paladian bridges in the world' },
-  { src: '/photos/IMG_7327.jpg', description: "La Iguanas Restaurant (I don't recommend the tacos) in Bath" },
+  { src: '/photos/IMG_6489.jpg', description: 'Pulteney Bridge, one of the very few Palladian bridges in the world with stores on it.' },
+  { src: '/photos/IMG_7327.jpg', description: "Las Iguanas Restaurant (I don't recommend the tacos) in Bath" },
 ]
 
 const PHOTOS_PER_PAGE = 6
