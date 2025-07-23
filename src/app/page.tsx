@@ -163,18 +163,18 @@ export default function Home() {
       {/* PHOTOGRAPHY */}
       <section id="photography" className="pt-20 pb-16 px-6 md:px-16 max-w-7xl mx-auto">
         <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-            <h2 className="text-3xl font-bold mb-2">Photography</h2>
-            <MotionLink
-              href="/photos"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{ y: [0, -5, 0], transition: { repeat: Infinity, duration: 2 } }}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition-all text-sm"
-            >
-              Check out Gallery Mode
-            </MotionLink>
-          </div>
+        <div className="flex flex-row items-center justify-between flex-wrap gap-4 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold whitespace-nowrap">Photography</h2>
+          <MotionLink
+            href="/photos"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            animate={{ y: [0, -5, 0], transition: { repeat: Infinity, duration: 2 } }}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-xs sm:text-sm px-4 py-2 mt-1 sm:mt-0 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all whitespace-nowrap shrink-0"
+          >
+            Check out Gallery Mode
+          </MotionLink>
+        </div>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
             Not high-res shards of my time, studying in England.
           </p>
