@@ -29,7 +29,7 @@ const photoData = [
   { src: '/photos/IMG_4784.jpg', description: 'Edinburgh Skyline' },
   { src: '/photos/IMG_4817.jpg', description: 'On top of a hill in Edinburgh' },
   { src: '/photos/IMG_4841.jpg', description: 'Again Edinburgh Skyline' },
-  { src: '/photos/IMG_4852.jpg', description: 'Urban Edinburgh' },
+  { src: '/photos/IMG_4852.jpg', description: 'Castle on the hill' },
   { src: '/photos/IMG_4888.jpg', description: 'Bath Train Station, Christmas 2024' },
   { src: '/photos/IMG_4974.jpg', description: 'North Parade Junction' },
   { src: '/photos/IMG_5259.jpg', description: 'Christ Church College, Oxford' },
