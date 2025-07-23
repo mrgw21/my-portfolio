@@ -31,7 +31,7 @@ export default function PhotosPage() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl font-bold mb-2">Photography</h1>
+          <h1 className="text-3xl font-bold mb-2">Gallery</h1>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
             Not high-res photo collection.
           </p>
