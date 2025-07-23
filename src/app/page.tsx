@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
+import Link from 'next/link';
 import { motion } from 'framer-motion'
 import BackgroundParticles from '@/components/BackgroundParticles'
 import ClientOnly from '@/components/ClientOnly'
@@ -16,6 +16,8 @@ import Image from 'next/image'
 import PhotoModal from '@/components/PhotoModal'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+
+const MotionLink = motion(Link)
 
 const photoData = [
   { src: '/photos/IMG_3998.jpg', description: 'Pulteney Bridge, Bath' },
@@ -161,7 +163,18 @@ export default function Home() {
       {/* PHOTOGRAPHY */}
       <section id="photography" className="pt-20 pb-16 px-6 md:px-16 max-w-7xl mx-auto">
         <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
-          <h2 className="text-3xl font-bold mb-2">Photography</h2>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+            <h2 className="text-3xl font-bold mb-2">Photography</h2>
+            <MotionLink
+              href="/photos"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{ y: [0, -5, 0], transition: { repeat: Infinity, duration: 2 } }}
+              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition-all text-sm"
+            >
+              Check out Gallery Mode
+            </MotionLink>
+          </div>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
             Not high-res shards of my time, studying in England.
           </p>

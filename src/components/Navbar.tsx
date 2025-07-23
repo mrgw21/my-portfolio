@@ -14,6 +14,7 @@ export default function Navbar() {
     { name: 'Portfolio', href: '/#portfolio' },
     { name: 'Writings', href: '/#writings' },
     { name: 'Photography', href: '/#photography' },
+    { name: 'Gallery', href: '/photos' },
   ]
 
   return (
